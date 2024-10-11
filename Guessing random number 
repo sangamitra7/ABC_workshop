@@ -1,0 +1,86 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNK9oMkOgkqXomeRpfSKlae",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/sangamitra7/ABC_workshop/blob/main/Guessing%20random%20number%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "v-0-T94MDDYB",
+        "outputId": "9a7e6225-4021-445b-a060-0b599c3daad7"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hi welcome to the game, This is a number guessing game.\n",
+            "You got 7 chances to guess the number. Let's start the game\n",
+            "Please Enter your Guess : 89\n",
+            "Your guess is higher \n",
+            "Please Enter your Guess : 4\n",
+            "Your guess is lesser\n",
+            "Please Enter your Guess : 34\n",
+            "Your guess is lesser\n",
+            "Please Enter your Guess : 50\n",
+            "Your guess is higher \n",
+            "Please Enter your Guess : 49\n",
+            "Your guess is higher \n",
+            "Please Enter your Guess : 78\n",
+            "Your guess is higher \n",
+            "Please Enter your Guess : 30\n",
+            "Oops sorry, The number is 40 better luck next time\n"
+          ]
+        }
+      ],
+      "source": [
+        "37\n",
+        "7\n",
+        "import random\n",
+        "print(\"Hi welcome to the game, This is a number guessing game.\\nYou got 7 chances to guess the number. Let's start the game\")\n",
+        "number_to_guess = random.randrange(100)\n",
+        "chances = 7\n",
+        "guess_counter = 0\n",
+        "while guess_counter < chances:\n",
+        "    guess_counter += 1\n",
+        "    my_guess = int(input('Please Enter your Guess : '))\n",
+        "    if my_guess == number_to_guess:\n",
+        "        print(f'The number is {number_to_guess} and you found it right !! in the {guess_counter} attempt')\n",
+        "        break\n",
+        "    elif guess_counter >= chances and my_guess != number_to_guess:\n",
+        "        print(f'Oops sorry, The number is {number_to_guess} better luck next time')\n",
+        "    elif my_guess > number_to_guess:\n",
+        "        print('Your guess is higher ')\n",
+        "    elif my_guess < number_to_guess:\n",
+        "        print('Your guess is lesser')"
+      ]
+    }
+  ]
+}
